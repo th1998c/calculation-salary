@@ -69,14 +69,14 @@ public class Worker {
 		contrats.remove(contract);
 	}
 	
-	public double income(Integer year, Integer Month) {
+	public double income(Integer year, Integer month) {
 		double sum = baseSalary;
 		Calendar calendar = Calendar.getInstance();
 		for(HourContract c : contrats) {
 			calendar.setTime(c.getDate()); //pegando a data do contrato
 			int c_year = calendar.get(Calendar.YEAR); //pegando o ano e passando para a variavel
 			int c_month = 1 + calendar.get(Calendar.MONTH);// pegando o mês e passando para a variavel
-			if(year == c_year && Month == c_month) {
+			if(year == c_year && month == c_month) {
 				sum += c.totalValue();
 			}
 		}
